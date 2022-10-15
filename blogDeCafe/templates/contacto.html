@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="contenedor contacto">
+    <h3>Contacto</h3>
+    <div class="bg-contacto"></div>
+    <form>
+        <fieldset>
+            <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input type="text" placeholder="Tu nombre">
+            </div>
+            <div class="campo">
+                <label for="email">E-mail</label>
+                <input type="email" placeholder="Tu e-mail">
+            </div>
+            <div class="campo">
+                <label for="mensaje">Mensaje</label>
+                <textarea name="mensaje"></textarea>
+            </div>
+
+            <input class="boton" type="submit" value="Enviar">
+        </fieldset>
+    </form>
+</main>
+
+{% endblock %}

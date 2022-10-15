@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<main class="contenido-index contenedor">
+    <section class="contenedor">
+        <h3>Nuestro blog</h3>
+        
+        {% for entrada in entradas %}
+        <div class="blog-index">
+            <picture>
+                <img loading="lazy" src={{entrada.imagen.url}} alt="imagen blog"> 
+            </picture>
+            <h4>{{entrada.titulo}}</h4>
+            <p>{{entrada.descripcion}}</p>
+            <a class="boton" href="{% url 'blog' id=entrada.id %}">Leer entrada</a>
+        </div>
+        {% endfor %}
+
+    </section>
+
+    <aside class="contenedor">
+        <h3>Nuestros cursos y talleres</h3>
+
+        {% for curso in cursos %}
+        <div class="curso-index">
+            <h4>{{curso.titulo}}</h4>
+            <p><b>Precio:</b> {{curso.precio}}</p>
+            <p><b>Cupos:</b> {{curso.cupos}}</p>
+            <a class="boton" href="{% url 'cursos' %}">Más información</a>
+        </div>
+        {% endfor %}
+
+    </aside>
+</main>
+
+{% endblock %}

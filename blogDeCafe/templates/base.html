@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página web de blog de café">
+    <link rel="preload" href="{% static 'css/normalize.css' %}" as="style">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="preload" href="{% static 'css/style.css' %}" as="style">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Blog De Café</title>
+</head>
+<body>
+    <header class="header">
+        <div class="barra">
+            <a href="{% url 'index' %}"><h1>Blog<b>DeCafé</b></h1></a>
+            <nav class="nav">
+                <a href="{% url 'nosotros' %}">Nosotros</a>
+                <a href="{% url 'cursos' %}">Cursos</a>
+                <a href="{% url 'contacto' %}">Contacto</a>
+            </nav>
+        </div>
+        <div class="contenedor">
+            <h2>Blog de café con cosejos y cursos</h2>
+            <p>Aprende de los expertos con las mejores recetas y consejos</p>
+        </div>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+        
+    <footer class="footer">
+        <div class="barra">
+            <a href="{% url 'index' %}"><h1>Blog<b>DeCafé</b></h1></a>
+            <nav class="nav">
+                <a href="{% url 'nosotros' %}">Nosotros</a>
+                <a href="{% url 'cursos' %}">Cursos</a>
+                <a href="{% url 'contacto' %}">Contacto</a>
+            </nav>
+        </div>
+    </footer>
+    
+    <script src="{% static 'js/modernizr.js' %}"></script>
+</body>
+</html>

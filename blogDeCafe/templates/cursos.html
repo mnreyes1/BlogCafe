@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<main class="contenedor cursos">
+    <h3>Nuestros próximos cursos y talleres</h3>
+
+    {% for curso in cursos %}
+    <div class="curso">
+        <img src={{curso.imagen.url}} alt="Imagen curso">
+        <div class="contenido-curso">
+            <h4>{{curso.titulo}}</h4>
+            <p><b>Fecha:</b> {{curso.fecha}}</p>
+            <p><b>Precio:</b> {{curso.precio}}</p>
+            <p><b>Cupos:</b> {{curso.cupos}}</p>
+            <p>{{curso.descripcion}}</p>
+        </div>
+    </div>
+    {% endfor %}
+
+</main>
+
+{% endblock %}

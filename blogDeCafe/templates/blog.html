@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<main class="contenedor blog">
+    <img src={{entrada.imagen.url}} alt="Imagen blog">
+    <h4>{{entrada.titulo}}</h4>
+    {% for p in entrada.contenido %}
+    <p>{{p}}</p>
+    {% endfor %}
+</main>
+    
+{% endblock %}
